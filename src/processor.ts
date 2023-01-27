@@ -6,11 +6,11 @@ interface ElementWithAttributes {
 }
 
 export default class Processor {
-    static BASE_RE = /\{\:?[ ]*([^\}\n ][^\}\n]*)[ ]*\}/;
-    static ONLY_RE = /^\{\:?[ ]*([^\}\n ][^\}\n]*)[ ]*\}$/;
-    static BLOCK_RE = /\n[ ]*\{\:?[ ]*([^\}\n ][^\}\n]*)[ ]*\}[ ]*$/;
-    static END_RE = /\{\:?[ ]*([^\}\n ][^\}\n]*)[ ]*\}$/m;
-
+    static BASE_RE = /\§\:?[ ]*([^\§\n ][^\§\n]*)[ ]*\§/;
+    static ONLY_RE = /^\§\:?[ ]*([^\§\n ][^\§\n]*)[ ]*\§$/;
+    static BLOCK_RE = /\n[ ]*\§\:?[ ]*([^\§\n ][^\§\n]*)[ ]*\§[ ]*$/;
+    static END_RE = /\§\:?[ ]*([^\§\n ][^\§\n]*)[ ]*\§$/m;
+    
     constructor() {}
 
     static parse(el: HTMLElement): ElementWithAttributes[];
