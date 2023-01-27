@@ -1,6 +1,6 @@
 # Markdown Attributes for Obsidian.md
 
-Allows the use of `{ .class id='id' data=value }` Pandoc-style markdown attributes inside Obsidian.md.
+Allows the use of `§ .class id='id' data=value §` Pandoc-style markdown attributes inside Obsidian.md.
 
 This plugin is currently proof of concept; however, no loss of data should occur. It is possible that rendering errors may happen. If so, please create an issue including the source text that caused the issue.
 
@@ -8,7 +8,7 @@ This plugin is currently proof of concept; however, no loss of data should occur
 
 Add your attributes inside a curly bracket with a colon, like this:
 
-`{ .class }`
+`§ .class §`
 
 See below for usage with specific elements.
 
@@ -21,7 +21,7 @@ Currently, the ID attribute must be set using `id=value` due to Obsidian's tags.
 Inline text elements such as italics, bold, highlight, etc. should have their attributes placed _inside_ the symbol:
 
 ```
-I'm normal text, but *I'm italic { class='italics' }*, **I'm bold { .bold }** and ==I'm highlighted { id=highlight }==.
+I'm normal text, but *I'm italic § class='italics' §*, **I'm bold § .bold §** and ==I'm highlighted § id=highlight §==.
 ```
 
 ### Paragraphs
@@ -32,14 +32,14 @@ Paragraph attributes should be placed after the last line of the block.
 This is a paragraph.
 This is another line of the paragraph.
 This is the last line.
-{ id=my_paragraph .class }
+§ id=my_paragraph .class §
 ```
 
 ### Headers
 
 Attributes must be added to headers at the end of the line.
 
-`### A Header { id=header .header-class }`
+`### A Header § id=header .header-class §`
 
 ### Tables
 
@@ -49,15 +49,15 @@ Attributes can be added to the `<table>` element by placing the attribute on the
 | header1 | header2 |
 | ------- | ------- |
 | column1 | column2 |
-{ .table-class}
+§ .table-class§
 ```
 
 Attributes can be added to individual table cells like so:
 
 ```markdown
-| header1 { .class} | header2                |
+| header1 § .class§ | header2                |
 | ------------------ | ---------------------- |
-| column1            | column2 { .class-two} |
+| column1            | column2 § .class-two§ |
 ```
 
 It is not currently possible to add attributes to `<tr>` or `<thead>` elements.
@@ -66,34 +66,34 @@ It is not currently possible to add attributes to `<tr>` or `<thead>` elements.
 
 Both Wikilinks and markdown syntax links may have attributes placed on them.
 
-`[link](http://example.com){ class="foo bar" title="Some title!" }`
+`[link](http://example.com)§ class="foo bar" title="Some title!" §`
 
-`[[Test 123]] { .wikilink}`
+`[[Test 123]] § .wikilink§`
 
 ### Lists
 
 Lists may have attributes placed on each individual list item.
 
 ```markdown
--   item { .item}
-    -   nested item { .nested}
-    -   nested item 2 { id="item 2" }
+-   item § .item§
+    -   nested item § .nested§
+    -   nested item 2 § id="item 2" §
 ```
 
 Attributes can only be applied to the final nested list by placing the attribute on the line immediately following the last item.
 
 ```markdown
--   item 1 { .item}
--   item 2 { id=item }
--   item 3 { data-item=3 }
-    { .top-level-ul }
+-   item 1 § .item§
+-   item 2 § id=item §
+-   item 3 § data-item=3 §
+    § .top-level-ul §
 ```
 
 ```markdown
--   item { .item}
-    -   nested item { .nested}
-    -   nested item 2 { id="item 2" }
-        { .nested-ul}
+-   item § .item§
+    -   nested item § .nested§
+    -   nested item 2 § id="item 2" §
+        § .nested-ul§
 ```
 
 ### Code Blocks
@@ -101,7 +101,7 @@ Attributes can only be applied to the final nested list by placing the attribute
 Code blocks should have their attributes placed after the initial three ticks.
 
 ````
-```python { data-python="code" .class }
+```python §data-python="code" .class }
 nums = [x for x in range(10)]
 ```
 ````
@@ -115,7 +115,7 @@ Block quotes can by targeted by placing the attributes directly after the last l
 ```md
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 > Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-{ .class }
+§ .class §
 
 ```
 
